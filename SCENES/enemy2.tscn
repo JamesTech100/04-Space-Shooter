@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/enemy.gd" type="Script" id=1]
+[ext_resource path="res://ASSETS/alien2.png" type="Texture" id=2]
+
+[node name="enemy2" type="KinematicBody2D"]
+position = Vector2( -139.994, 144.569 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1.69121, -0.758188 )
+scale = Vector2( 3, 2 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 1.69121, -0.758188 )
+scale = Vector2( 3, 2 )
+polygon = PoolVector2Array( 4.8, -16.5, 18.5, -3.7, 18.5, 6.8, 6.7, 18.5, -7.8, 18.5, -7.8, 16.5, -18.5, 7.5, -18.5, -3.7, -4.8, -16.5, -4.8, -18.5, 4.8, -18.5 )
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Tween" type="Tween" parent="."]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

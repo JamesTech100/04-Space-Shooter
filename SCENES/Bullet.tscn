@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Bullet.gd" type="Script" id=1]
+[ext_resource path="res://ASSETS/laserRed05.png" type="Texture" id=2]
+
+[node name="Bullet" type="RigidBody2D"]
+position = Vector2( 0, -1.36066 )
+collision_layer = 6
+mode = 2
+gravity_scale = 0.0
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.0826721, -35.199 )
+scale = Vector2( 1.49246, 1.49246 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 0.0826721, -35.199 )
+scale = Vector2( 1.49246, 1.49246 )
+polygon = PoolVector2Array( 4.5, 18.5, -4.5, 18.5, -4.5, -18.5, 4.5, -18.5 )
